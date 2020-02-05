@@ -5,9 +5,9 @@ class Timer extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-     time: 0
+     time: 0,
      
-    };
+    }
  
   }
 
@@ -16,8 +16,8 @@ class Timer extends React.Component {
     
     
     this.timer = setInterval(() => this.setState({
-    time: Math.round(this.state.time +1)
-       }), 1000);
+    time: Math.round(this.state.time +1/10)
+       }), 1000).toFixed(2);
     
   }
 
@@ -29,7 +29,7 @@ class Timer extends React.Component {
     return (
       <div data-testid="timer">
       
-      <h1>  Timer: {this.state.time} </h1>
+      <h1>  {this.state.time} </h1>
         
         
       </div>
